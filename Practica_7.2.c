@@ -28,7 +28,6 @@ void pedirEstudiantes(Estudiante ** LISTA_E, int num_estudiantes){
 		printf("\t APELLIDO:");
 		scanf(" %[^\n]", (*LISTA_E)[i].apellido);
 
-
 		printf("\t NOTA:");
 	 	scanf("%d", &(*LISTA_E)[i].nota);
 	}
@@ -49,11 +48,14 @@ int main(){
 	printf("Introduzca en número de estudiantes: ");
 	scanf("%d", &num_estudiantes);
 
-
+//UNO --> Función de pedir y mostrar estudiantes.
  	pedirEstudiantes(&LISTA_E, num_estudiantes);
 
+//DOS --> Función ordenar por nota
+
+//TRES --> 	Función ordenar por apellido (alfabético)
 	
 
-
+free(LISTA_E);
 return 0;	
 }

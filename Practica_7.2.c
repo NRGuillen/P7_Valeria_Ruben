@@ -41,6 +41,8 @@ void pedirEstudiantes(Estudiante ** LISTA_E, int num_estudiantes){
 	    }
 }
 
+//Actualmente está todo almacenado en LISTA_E. Primero tenemos que acceder a LISTA_E->notas y organizar las notas. Luego vamos a LISTA_E->Apellido y lo organizamos alfabeticamente.
+
 int main(){
 
 	Estudiante * LISTA_E = NULL;

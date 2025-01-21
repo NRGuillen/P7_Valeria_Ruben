@@ -39,7 +39,16 @@ void pedirEstudiantes(Estudiante ** LISTA_E, int num_estudiantes){
 	        	printf("\tApellido: %s.\n", (*LISTA_E)[i].apellido);
 	        	printf("\tNota: %d.\n", (*LISTA_E)[i].nota);
 	    }
+
 }
+
+int compareNota(const void* a, const void* b){
+    	const Estudiante* da = (const Estudiante*)a;
+    	const Estudiante* db = (const Estudiante*)b;
+    	return da->nota - db->nota;
+}
+
+//Actualmente está todo almacenado en LISTA_E. Primero tenemos que acceder a LISTA_E->notas y organizar las notas. Luego vamos a LISTA_E->Apellido y lo organizamos alfabeticamente.
 
 int main(){
 
@@ -52,6 +61,10 @@ int main(){
  	pedirEstudiantes(&LISTA_E, num_estudiantes);
 
 //DOS --> Función ordenar por nota
+	qsort(LISTA_E, num_estudiantes, sizeof(Estudiante), compareNota);
+
+	for (int i = 0; i < num_estudiantes; ++i) {
+     	printf("%d.\n", LISTA_E[i].nota);}
 
 //TRES --> 	Función ordenar por apellido (alfabético)
 	
